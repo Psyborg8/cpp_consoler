@@ -21,10 +21,10 @@ target_compile_options( cpp_consoler
 )
 
 if( CMAKE_BUILD_TYPE STREQUAL "DEBUG" )
-    target_compile_options( cpp_consoler PUBLIC -ggdb3 -Og )
+    target_compile_options( cpp_consoler PRIVATE -ggdb3 -Og )
     target_compile_definitions( cpp_consoler PRIVATE _DEBUG=1 )
 elseif( CMAKE_BUILD_TYPE STREQUAL "RELEASE" )
-    target_compile_options( cpp_consoler PUBLIC -O2 )
+    target_compile_options( cpp_consoler PRIVATE -O2 )
 endif()
 
 if( BUILD_TESTS )
